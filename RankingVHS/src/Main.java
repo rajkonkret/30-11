@@ -15,9 +15,10 @@ public class Main {
         }
         Store advisorRadek = new Store(filmsToOffer);
         Advisor advisor = new Advisor(advisorRadek, 1, 1);
-        System.out.println("Polecany film: " + advisor.findBestFromBoth(FilmCategory.COMEDY).toPrint());
 
-        System.out.println("Podaj film, który wypożyczasz");
+        System.out.println("\nPolecany film: " + advisor.findBestFromBoth(FilmCategory.COMEDY).toPrint());
+
+        System.out.println("\nPodaj film, który wypożyczasz");
         int filmToRent = scanner.nextInt();
         filmsToOffer[filmToRent - 1].setIspresent(false);
         Film yourFilm = filmsToOffer[filmToRent - 1];
