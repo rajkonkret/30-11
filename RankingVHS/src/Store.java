@@ -1,21 +1,24 @@
 class Store {
-    Film[] films;
+    private Film[] store;
 
-    Store(Film[] fims) {
-        this.films = fims;
+    Store(Film[] films) {
+        this.store = films;
     }
 
     Film findBestFilm() {
-        Film bestFilm = films[0];
 
-        for (Film film : films) {
-            if (bestFilm.getRanking() < film.getRanking()) {
-                bestFilm = film;
+        Film bestFilm = store[0];
+        for (Film films : store) {
+            if (films.getRanking() > bestFilm.getRanking()) {
+                bestFilm = films;
             }
 
         }
-
         return bestFilm;
+    }
+
+    Film[] getFilms() {
+        return store;
     }
 
 }
