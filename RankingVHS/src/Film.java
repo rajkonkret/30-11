@@ -13,7 +13,7 @@ class Film {
         return ranking;
     }
 
-    String toPrint(){
-        return title+" "+ranking;
+    String toPrint() {
+        return title + " " + (int) (ranking * 100) + " pkt";
     }
 }
