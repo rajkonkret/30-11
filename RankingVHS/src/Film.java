@@ -26,7 +26,9 @@ class Film {
     double getRankingImdb() {
         return imdb;
     }
-
+    FilmCategory getFilmCategory(){
+        return filmCategory;
+    }
 
     String toPrint() {
         return title + " " + (int) ((ranking + imdb) / 2 * 100) + " pkt " + filmCategory+" "+ispresent;

@@ -15,13 +15,14 @@ public class Main {
         }
         Store advisorRadek = new Store(filmsToOffer);
         Advisor advisor = new Advisor(advisorRadek, 1, 1);
-        System.out.println("Polecany film: " + advisor.findBestFromBoth().toPrint());
+        System.out.println("Polecany film: " + advisor.findBestFromBoth(FilmCategory.COMEDY).toPrint());
 
         System.out.println("Podaj film, który wypożyczasz");
         int filmToRent = scanner.nextInt();
         filmsToOffer[filmToRent - 1].setIspresent(false);
         Film yourFilm = filmsToOffer[filmToRent - 1];
         System.out.println("Wypożyczyłeś: " + yourFilm.toPrint());
+
         System.out.println("Chcesz oddac? (t/n)");
         String yourchoice = scanner.next();
         if (yourchoice.equalsIgnoreCase("t")) {
