@@ -13,12 +13,14 @@ public class Advisor {
     }
 
     Film findBestFromBoth() {
-        Film bestFilmBoth= store.getFilms()[0];
+        Film bestFilmBoth = store.getFilms()[0];
+        double rankingAverage = (bestFilmBoth.getRankingImdb() + bestFilmBoth.getRanking()) / 2;
         for (Film film : store.getFilms()) {
-            double
-            double rankingAverage = (film.getRanking() + film.getRankingImdb()) / 2;
-
-            return film;
+            double rankingAverageFilm = (film.getRanking() + film.getRankingImdb()) / 2.0;
+            if (rankingAverageFilm > rankingAverage) {
+                bestFilmBoth = film;
+                rankingAverage = rankingAverageFilm;
+            }
         }
         return bestFilmBoth;
     }
