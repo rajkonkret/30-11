@@ -11,15 +11,19 @@ public class Tire {
         this.diameter = diameter;
     }
 
-    public int getWidth() {
+    int getWidth() {
         return width;
     }
 
-    public int getAspectRatio() {
+    int getAspectRatio() {
         return aspectRatio;
     }
 
-    public int getDiameter() {
+    int getDiameter() {
         return diameter;
+    }
+
+    String toPrint() {
+        return "[" + width + "/" + aspectRatio + " R" + diameter + "]";
     }
 }
