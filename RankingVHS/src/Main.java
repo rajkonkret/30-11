@@ -3,7 +3,8 @@ public class Main {
 
         Film dogs = new Film("Psy", 0.2);
         Film[] filmsToOffer = {dogs};
-        Advisor advisorRadek = new Advisor(filmsToOffer);
 
+        Advisor advisorRadek = new Advisor(filmsToOffer);
+        System.out.println(advisorRadek.findBestFilm().toPrint());
     }
 }
