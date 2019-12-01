@@ -47,7 +47,7 @@ public class Advisor {
     }
 
     private double ranking(Film film) {
-        return (film.getRankingImdb() * imdbWage + film.getRanking() * rankingWage) / 2;
+        return (film.getRankingImdb() * imdbWage + film.getRanking() * rankingWage + film.getUserRanking()) / 3;
     }
 }
 

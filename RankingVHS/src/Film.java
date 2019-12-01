@@ -5,6 +5,7 @@ class Film {
     private FilmCategory filmCategory;
     private boolean ispresent;
     private int id;
+    private double userRanking;
 
     Film(
             String title,
@@ -34,11 +35,21 @@ class Film {
         return filmCategory;
     }
 
+    double getUserRanking() {
+        return userRanking;
+    }
+
     String toPrint() {
-        return id + ") " + title + " " + (int) ((ranking + imdb) / 2 * 100) + " pkt " + filmCategory + " " + ispresent;
+        return id + ") " + title + " " + (int)((ranking + imdb + userRanking) / 3 * 100) + " pkt " + filmCategory + " " + ispresent;
     }
 
     public void setIspresent(boolean ispresent) {
+
         this.ispresent = ispresent;
+    }
+
+    public void userRanking(double vote) {
+        userRanking = vote;
+
     }
 }
