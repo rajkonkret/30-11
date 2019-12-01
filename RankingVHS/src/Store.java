@@ -6,7 +6,6 @@ class Store {
     }
 
     Film[] getFilms() {
-
         return store;
     }
 

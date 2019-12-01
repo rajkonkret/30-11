@@ -30,19 +30,16 @@ public class Advisor {
 
     Film findBestFromBoth(FilmCategory filmCategory) {
         Film bestFilmBoth = store.getFilms()[0];
-
         double rankingAverage = ranking(bestFilmBoth);
 
         for (Film film : store.getFilms()) {
 
             if (film.getFilmCategory().equals(filmCategory)) {
-
                 double rankingAverageFilm = ranking(film);
 
                 if (rankingAverageFilm > rankingAverage) {
-
-                    bestFilmBoth = film;
                     rankingAverage = rankingAverageFilm;
+                    bestFilmBoth = film;
                 }
             }
         }

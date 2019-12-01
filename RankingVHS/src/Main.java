@@ -20,16 +20,17 @@ public class Main {
 
         System.out.println("\nPodaj film, który wypożyczasz");
         int filmToRent = scanner.nextInt();
+
         filmsToOffer[filmToRent - 1].setIspresent(false);
         Film yourFilm = filmsToOffer[filmToRent - 1];
-        System.out.println("Wypożyczyłeś: " + yourFilm.toPrint());
 
+        System.out.println("Wypożyczyłeś: " + yourFilm.toPrint());
         System.out.println("Chcesz oddac? (t/n)");
         String yourchoice = scanner.next();
 
         if (yourchoice.equalsIgnoreCase("t")) {
-
             yourFilm.setIspresent(true);
+
             for (Film film : filmsToOffer) {
                 System.out.println(film.toPrint());
             }
