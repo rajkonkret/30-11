@@ -15,9 +15,11 @@ public class Advisor {
 
     Film findBestFromBoth() {
         Film bestFilmBoth = store.getFilms()[0];
-        double rankingAverage = (bestFilmBoth.getRankingImdb() + bestFilmBoth.getRanking()) / 2;
+        double rankingAverage = ranking(bestFilmBoth);
+
         for (Film film : store.getFilms()) {
-            double rankingAverageFilm = (film.getRanking() + film.getRankingImdb()) / 2.0;
+            double rankingAverageFilm =ranking(film);
+
             if (rankingAverageFilm > rankingAverage) {
                 bestFilmBoth = film;
                 rankingAverage = rankingAverageFilm;
@@ -29,13 +31,13 @@ public class Advisor {
     Film findBestFromBoth(FilmCategory filmCategory) {
         Film bestFilmBoth = store.getFilms()[0];
 
-        double rankingAverage = (bestFilmBoth.getRankingImdb() + bestFilmBoth.getRanking()) / 2;
+        double rankingAverage = ranking(bestFilmBoth);
 
         for (Film film : store.getFilms()) {
 
             if (film.getFilmCategory().equals(filmCategory)) {
 
-                double rankingAverageFilm = (film.getRanking() + film.getRankingImdb()) / 2.0;
+                double rankingAverageFilm = ranking(film);
 
                 if (rankingAverageFilm > rankingAverage) {
 
@@ -47,5 +49,8 @@ public class Advisor {
         return bestFilmBoth;
     }
 
+    private double ranking(Film film) {
+        return (film.getRankingImdb() * imdbWage + film.getRanking() * rankingWage) / 2;
+    }
 }
 
